@@ -7,6 +7,7 @@ const CreateJourney = ()=>{
 		const data = new FormData((e as any).target);
 		const formObj =  Object.fromEntries((data as any).entries());
 		const payload ={
+        "name":formObj['name'],
     		"phoneNo":formObj['phoneNumber'],
 			"startingPoint" : formObj['startingPoint'],
 			"destination": formObj['destination'],
@@ -23,6 +24,10 @@ const CreateJourney = ()=>{
   <div className="form-group">
     <label htmlFor="phoneNumber">Enter phone number</label>
     <input type="tel" className="form-control" name="phoneNumber" placeholder="e.g. 6454758908"/>
+  </div>
+    <div className="form-group">
+    <label htmlFor="name">Enter your name</label>
+    <input type="text" className="form-control" name="name" placeholder="e.g. Paras Jain"/>
   </div>
   <div className="form-group">
     <label htmlFor="startingPoint">Enter starting point</label>
