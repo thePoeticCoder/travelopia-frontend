@@ -1,5 +1,5 @@
-import React from 'react'
-import { Button, Card } from 'react-bootstrap'
+
+import { Card } from 'react-bootstrap'
 import img1 from '../../assets/images/review1.jpeg'
 import img2 from '../../assets/images/review2.jpeg';
 import img3 from '../../assets/images/review3.jpeg';

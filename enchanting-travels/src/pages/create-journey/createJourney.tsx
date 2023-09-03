@@ -1,6 +1,5 @@
 import submitJourney from "../../services/submitJourney";
 import img1 from '../../assets/images/travelImg1.jpeg';
-import img2 from '../../assets/images/travel2.png';
 import img3 from '../../assets/images/travelImg3.jpeg';
 import SuccessAlert from "../../components/success-alert/successAlert";
 import { useEffect, useState } from "react";

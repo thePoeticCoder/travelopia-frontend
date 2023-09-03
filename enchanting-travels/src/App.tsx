@@ -1,7 +1,6 @@
-import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
-import { RouterProvider, createBrowserRouter, Navigate } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import EnchantingTravelsHomepage from './pages/homepage/enchantingTravelsHomepage';
 import CreateJourney from './pages/create-journey/createJourney';
 import PreviousJourneys from './pages/previous-journeys/previousJourney';

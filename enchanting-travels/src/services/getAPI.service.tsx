@@ -1,4 +1,3 @@
-import { error } from "console"
 
 const httpPost = (endpoint : string, payload : any) =>{
 	const options = {
