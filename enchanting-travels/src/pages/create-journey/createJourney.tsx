@@ -2,28 +2,43 @@ import submitJourney from "../../services/submitJourney";
 import img1 from '../../assets/images/travelImg1.jpeg';
 import img2 from '../../assets/images/travel2.png';
 import img3 from '../../assets/images/travelImg3.jpeg';
+import SuccessAlert from "../../components/success-alert/successAlert";
+import { useEffect, useState } from "react";
 
 const CreateJourney = ()=>{
+  const [submitSuccess, setSubmitSuccess] = useState<boolean>(false);
+  const [submitResponse, setSubmitResponse] = useState<any>(null);
 
-	const createMyJourney = (e : React.FormEvent<HTMLFormElement>)=>{
-		e.preventDefault();
-		const data = new FormData((e as any).target);
-		const formObj =  Object.fromEntries((data as any).entries());
-		const payload ={
+  useEffect(() => {
+    if(submitResponse)
+    setSubmitSuccess(true);
+  }, [submitResponse])
+
+  const createMyJourney = async(e : React.FormEvent<HTMLFormElement>)=>{
+    e.preventDefault();
+    const data = new FormData((e as any).target);
+    const formObj =  Object.fromEntries((data as any).entries());
+    const payload ={
         "name":formObj['name'],
-    		"phoneNo":formObj['phoneNumber'],
-			"startingPoint" : formObj['startingPoint'],
-			"destination": formObj['destination'],
-			"totalTravellers": formObj['totalTravellers'],
-			"Budget":formObj['budget'],
-			"rating":formObj['ratings']
-		}
-		submitJourney(payload);
+        "phoneNo":formObj['phoneNumber'],
+      "startingPoint" : formObj['startingPoint'],
+      "destination": formObj['destination'],
+      "totalTravellers": formObj['totalTravellers'],
+      "Budget":formObj['budget'],
+      "rating":formObj['ratings']
+    }
+    const response = await submitJourney(payload);
+    setSubmitResponse(response);
+  }
 
-	}
-	return (
-    <div className="row">
-	<div className="my-4 col-md-6">
+  const onDismissSuccessAlert = ()=>{
+    setSubmitSuccess(false);
+  }
+  return (
+  <>
+  {submitSuccess && <SuccessAlert onDismiss={onDismissSuccessAlert} data={submitResponse}/>}
+  <div className="row">
+  <div className="my-4 col-md-6">
   <form onSubmit={createMyJourney}>
   <div className="form-group my-3">
     <label htmlFor="name">Enter your name</label>
@@ -65,7 +80,7 @@ const CreateJourney = ()=>{
   </div>
   <button type="submit" className="btn btn-primary mt-3">Create journey</button>
 </form>
-	</div>
+  </div>
   <div className="my-4 col-md-6">
   <div className="jumbotron">
   <img src={img1} alt=""/>
@@ -76,7 +91,8 @@ const CreateJourney = ()=>{
 </div>
     <div className="col"><img src={img3} alt=""/></div>
   </div>
-  </div>)
+  </div>
+  </>)
 }
 
 export default CreateJourney;
