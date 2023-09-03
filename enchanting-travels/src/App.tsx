@@ -10,22 +10,22 @@ import Navbar from './components/navigation-bar/navbar';
 
 const router = createBrowserRouter([
   {
-    path : "",
+    path : "/",
     element : <EnchantingTravelsHomepage/>
 
   },
   {
-    path : "/create-journey",
+    path : "create-journey",
     element : <CreateJourney/>
 
   },
   {
-    path : "/my-prev-journey",
+    path : "my-prev-journey",
     element : <PreviousJourneys/>
 
   },
   {
-    path : "/journey-enquiries",
+    path : "journey-enquiries",
     element : <AllEnquiriesPage/>
 
   }
@@ -36,7 +36,7 @@ function App() {
     <Navbar/>
     <div className='container'>
     
-    <RouterProvider router={router}></RouterProvider>
+    <RouterProvider  router={router}></RouterProvider>
     </div>
     </>
   );
