@@ -3,6 +3,7 @@ import img1 from '../../assets/images/travelImg1.jpeg';
 import img3 from '../../assets/images/travelImg3.jpeg';
 import SuccessAlert from "../../components/success-alert/successAlert";
 import { useEffect, useState } from "react";
+import Image from "react-bootstrap/Image"
 
 const CreateJourney = ()=>{
   const [submitSuccess, setSubmitSuccess] = useState<boolean>(false);
@@ -82,13 +83,13 @@ const CreateJourney = ()=>{
   </div>
   <div className="my-4 col-md-6">
   <div className="jumbotron">
-  <img src={img1} alt=""/>
+  <Image src={img1} alt=""/>
   <h1 className="display-4">Hello, Traveller!</h1>
   <p className="lead">We have come up with customize plans to relieve you from all booking tension. You have to just pack your bag and book your seemless journey with us.</p>
   <hr className="my-4"/>
   <p>Once you specified your needs by filling this form, our agent will call you within 24hrs to discuss your bookings.</p>
 </div>
-    <div className="col"><img src={img3} alt=""/></div>
+    <div className="col"><Image src={img3} alt=""/></div>
   </div>
   </div>
   </>)

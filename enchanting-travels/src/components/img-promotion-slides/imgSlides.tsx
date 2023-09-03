@@ -3,12 +3,13 @@ import { Carousel } from 'react-bootstrap'
 import img1 from '../../assets/images/travelImg1.jpeg'
 import img2 from '../../assets/images/travel2.png'
 import img3 from '../../assets/images/travelImg3.jpeg'
+import Image from "react-bootstrap/Image"
 
 export default function ImgSlides() {
   return (
     <Carousel data-bs-theme="dark" style={{border:"2px solid beige"}}>
       <Carousel.Item>
-        <img
+        <Image
           className="d-block w-100"
           src={img1}
 		  height={400}
@@ -20,7 +21,7 @@ export default function ImgSlides() {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img
+        <Image
           className="d-block w-100"
           src={img2}
 		  height={400}
@@ -32,7 +33,8 @@ export default function ImgSlides() {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img
+        <Image
+        
           className="d-block w-100"
           src={img3}
 		  height={400}

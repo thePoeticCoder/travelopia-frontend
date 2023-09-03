@@ -1,10 +1,12 @@
+import { Link } from 'react-router-dom';
 import logo from '../../assets/images/logo.jpeg';
 import './navbar.css';
+import Image from "react-bootstrap/Image"
 const Navbar = () => {
   return (
       <nav className="navbar navbar-expand-lg navbar-light px-3" style={{backgroundColor: "#e3f2fd"}}>
       <a className="navbar-brand" href="/">
-      <img src={logo} width="30" height="30" className="d-inline-block align-top" alt=""/> Home</a>
+      <Image src={logo} width="30" height="30" className="d-inline-block align-top" alt=""/> Home</a>
         <button
           className="navbar-toggler"
           type="button"
