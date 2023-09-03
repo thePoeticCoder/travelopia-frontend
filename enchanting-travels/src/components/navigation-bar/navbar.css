@@ -1,0 +1,22 @@
+.Logo{
+    background-image: url(../../assets/images/logo.jpeg);
+}
+#navbarTogglerDemo02 a:link {
+	color: #777;
+}
+/* visited link grey */
+#navbarTogglerDemo02 a:visited {
+	color: #777;
+}
+/* mouse over link blue */
+#navbarTogglerDemo02 a:hover {
+	color: #0CF;
+}
+/* selected link blue */
+#navbarTogglerDemo02 a:active {
+	color: #0CF;
+}
+/* !IMPORTANT ONLY ADD THIS CLASS TO YOUR ACTIVE PAGE LINK ( Color Blue )*/
+.activePage a {
+	color: #0CF !important
+}

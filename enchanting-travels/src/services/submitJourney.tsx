@@ -1,7 +1,7 @@
 import { httpPost } from "./getAPI.service";
 
 
-const submitJourney = (payload : any)=>{
-	 httpPost("https://travelopia-assignment-server.onrender.com/travel/createTravelInfo",payload)
+const submitJourney = async(payload : any)=>{
+	 return await httpPost("https://travelopia-assignment-server.onrender.com/travel/createTravelInfo",payload)
 }
 export default submitJourney;
